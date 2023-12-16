@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.handle;
 
 
 import org.springframework.context.annotation.ComponentScan;
@@ -24,7 +24,7 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
         System.out.println("remoteAddr:"+httpServletRequest.getRemoteAddr());
         User user = (User) authentication.getPrincipal();
         System.out.println("user:"+user.getAuthorities());
-        //重定向
+        //重定向到成功的地址
         httpServletResponse.sendRedirect(url);
     }
 }
